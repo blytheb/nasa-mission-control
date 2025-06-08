@@ -25,6 +25,7 @@
   "homepage": "https://github.com/blytheb/nasa-mission-control#readme",
   "description": "",
   "dependencies": {
+    "mongoose": "^8.15.1",
     "server": "^1.0.41"
   }
 }
