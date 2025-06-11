@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-const MONGO_URL = "mongodb+srv://builtbyblythe:jNQuxjE3AEPuelt4@cluster0.npfwuxp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const MONGO_URL = process.env.MONGO_URL;
 
 mongoose.connection.once('open', () => {
     console.log('MongoDB connection ready!');

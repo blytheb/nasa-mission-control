@@ -4,10 +4,14 @@ const {
     mongoConnect, 
     mongoDisconnect 
 } = require('../../services/mongo');
+const {
+    loadPlanetsData,
+} = require('../../models/planets.model');
 
 describe('Launches API', () => {
     beforeAll( async() => {
         await mongoConnect();
+        await loadPlanetsData();
     });
     afterAll( async() => {
         await mongoDisconnect();
@@ -34,14 +38,14 @@ describe('Launches API', () => {
             mission: 'USS Enterprise',
             rocket: 'NCC 1701-D',
             target: 'Kepler-62 f',
-        }
+        };
 
         const launchDataWithInvalidDate = {
             mission: 'USS Enterprise',
             rocket: 'NCC 1701-D',
             target: 'Kepler-62 f',
             launchDate: 'zoot'
-        }
+        };
 
         test('It should respond with 201 created', async() => {
             const response = await request(app)

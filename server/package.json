@@ -14,10 +14,11 @@
   "description": "NASA Mission Control API",
   "jest": {
     "testEnvironment": "node"
-  }, 
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "csv-parse": "^5.6.0",
+    "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "morgan": "^1.10.0"
   },
